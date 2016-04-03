@@ -1,0 +1,22 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 04 Oct 2015 03:25:51 GMT
+Content-Type: text/html; charset=utf-8
+Connection: close
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+X-Drupal-Cache: MISS
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Last-Modified: Tue, 22 Sep 2015 08:49:09 +0000
+Cache-Control: public, max-age=600
+ETag: "1442911749-0"
+Content-Language: en
+Link: </node/4286>; rel="shortlink",</post/love-supreme-comes-alive-unearthed-photos>; rel="canonical"
+X-Generator: Drupal 7 (http://drupal.org)
+Vary: Cookie,Accept-Encoding
+X-NginX-Upstream: 192.168.120.83:80
+X-NginX-Cache: MISS
+X-NginX-Server: 192.168.120.114
+X-NginX-Upstream: 192.168.120.117:80
+

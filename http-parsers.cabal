@@ -28,10 +28,12 @@ test-suite Test
   type:                exitcode-stdio-1.0
   main-is:             Run.hs
   hs-source-dirs:      test, .
+  default-language:    Haskell2010
   build-depends:       base,
                        bytestring,
                        attoparsec,
                        http-types,
                        case-insensitive,
                        filepath,
-                       Glob
+                       tasty,
+                       tasty-golden

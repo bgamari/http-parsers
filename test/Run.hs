@@ -1,22 +1,27 @@
 import Data.Attoparsec.ByteString.Char8
 import qualified Data.ByteString as BS
-import System.FilePath.Glob
 import HTTP.Parse
 import System.FilePath
-
-testParse :: Show a => Parser a -> FilePath -> IO ()
-testParse parser file = do
-    mr <- parseOnly parser <$> BS.readFile file
-    -- e <- readFile (file <.> "expected")
-    case mr of
-        Left err -> fail $ "Error parsing "++file++": "++err
-        Right r
-          --- | show r /= e -> fail "Test output mismatch"
-          | otherwise   -> return ()
-
-testRequest :: FilePath -> IO ()
-testRequest = testParse request
+import Test.Tasty
+import Test.Tasty.Golden
 
 main :: IO ()
 main = do
-    glob "requests/*.req" >>= mapM_ testRequest
+    tt <- sequence
+        [ testGroup "requests" <$> testDirectory request "test/requests" ".req"
+        , testGroup "responses" <$> testDirectory request "test/responses" ".resp"
+        ]
+    defaultMain $ testGroup "parsing" tt
+
+
+testDirectory :: Show a => Parser a -> FilePath -> String -> IO [TestTree]
+testDirectory parser dir ext = do
+    files <- findByExtension [ext] dir
+    let file f =
+            let golden = f <.> "expected"
+                out = f <.> "out"
+                create = do
+                    res <- parseOnly parser <$> BS.readFile f
+                    writeBinaryFile out (show res)
+            in goldenVsFile f golden out create
+    return $ map file files
