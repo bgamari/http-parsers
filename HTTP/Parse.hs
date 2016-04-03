@@ -73,6 +73,7 @@ response = do
     respVersion <- version
     void space
     statusCode <- decimal
+    void space
     statusMessage <- takeTill (== '\n')
     let respStatus = H.Status {..}
     respHeaders <- headers
