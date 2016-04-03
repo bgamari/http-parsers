@@ -36,4 +36,5 @@ test-suite Test
                        case-insensitive,
                        filepath,
                        tasty,
-                       tasty-golden
+                       tasty-golden,
+                       pretty-show

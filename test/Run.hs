@@ -4,6 +4,7 @@ import HTTP.Parse
 import System.FilePath
 import Test.Tasty
 import Test.Tasty.Golden
+import Text.Show.Pretty
 
 main :: IO ()
 main = do
@@ -22,6 +23,8 @@ testDirectory parser dir ext = do
                 out = f <.> "out"
                 create = do
                     res <- parseOnly parser <$> BS.readFile f
-                    writeBinaryFile out (show res)
+                    writeBinaryFile out (ppShow res)
+                -- TODO: Fix Show HttpVersion instance to produce
+                -- valid Haskell
             in goldenVsFile f golden out create
     return $ map file files
