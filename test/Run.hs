@@ -1,6 +1,6 @@
 import Data.Attoparsec.ByteString.Char8
 import qualified Data.ByteString as BS
-import HTTP.Parse
+import Network.HTTP.Parse
 import System.FilePath
 import Test.Tasty
 import Test.Tasty.Golden

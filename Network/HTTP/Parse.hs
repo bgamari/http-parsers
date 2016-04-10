@@ -1,7 +1,7 @@
 {-# LANGUAGE RecordWildCards #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-module HTTP.Parse
+module Network.HTTP.Parse
     ( -- * Parsing whole requests and responses
       request, Request(..)
     , response, Response(..)
