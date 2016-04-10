@@ -1,7 +1,10 @@
 name:                http-parsers
 version:             0.1.0.0
--- synopsis:            
--- description:         
+synopsis:            Types and attoparsec parsers for HTTP requests and responses
+description:
+    This package provides a set of simple types (built on the primitives
+    provided by the @http-types@ package and @attoparsec@ parsers for HTTP
+    requests, responses, and headers.
 homepage:            http://github.com/bgamari/http-parsers
 license:             BSD3
 license-file:        LICENSE
