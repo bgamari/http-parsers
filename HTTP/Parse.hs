@@ -74,7 +74,8 @@ response = do
     void space
     statusCode <- decimal
     void space
-    statusMessage <- takeTill (== '\n')
+    statusMessage <- takeWhile1 (/= '\n')
+    newLine
     let respStatus = H.Status {..}
     respHeaders <- headers
     return $ Response {..}
