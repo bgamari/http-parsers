@@ -20,7 +20,7 @@ library
   exposed-modules:     Network.HTTP.Parse
   other-extensions:    RecordWildCards, OverloadedStrings
   default-language:    Haskell2010
-  build-depends:       base >=4.8 && <4.12,
+  build-depends:       base >=4.8 && <4.13,
                        bytestring >=0.10 && <0.11,
                        attoparsec >=0.13 && <0.14,
                        http-types >=0.9 && <0.13,
