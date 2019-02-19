@@ -4,12 +4,12 @@ Right
     , reqUri = "/post/love-supreme-comes-alive-unearthed-photos"
     , reqVersion = HTTP / 1.0
     , reqHeaders =
-        [ ( "Host" , ": kuvo.org" )
-        , ( "Accept-Encoding" , ": x-gzip, gzip, deflate" )
-        , ( "User-Agent" , ": CCBot/2.0 (http://commoncrawl.org/faq/)" )
-        , ( "Accept-Language" , ": en-us,en-gb,en;q=0.7,*;q=0.3" )
+        [ ( "Host" , "kuvo.org" )
+        , ( "Accept-Encoding" , "x-gzip, gzip, deflate" )
+        , ( "User-Agent" , "CCBot/2.0 (http://commoncrawl.org/faq/)" )
+        , ( "Accept-Language" , "en-us,en-gb,en;q=0.7,*;q=0.3" )
         , ( "Accept"
-          , ": text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+          , "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
           )
         ]
     }

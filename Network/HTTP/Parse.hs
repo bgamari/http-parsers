@@ -35,6 +35,7 @@ headers = many header
   where
     header = do
         name <- takeWhile1 (notInClass ":\n")
+        char ':'
         skipSpace
         value <- takeWhile1 (/= '\n')
         newLine
